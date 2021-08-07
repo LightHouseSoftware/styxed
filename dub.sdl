@@ -1,0 +1,5 @@
+name "styxed"
+description "Low-level implementation of 9P2000 protocol from Plan 9/Inferno"
+authors "Oleg Bakharev" "Ilya Pertsev" "LightHouse Software"
+copyright "Copyright © 2021, Oleg Bakharev, Ilya Pertsev, LightHouse Software"
+license "GPL 3"
