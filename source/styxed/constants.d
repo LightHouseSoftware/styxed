@@ -7,9 +7,9 @@ private {
 // protocol version
 enum STYX_VERSION = cast(ubyte[]) "9P2000";
 // no tag value
-enum STYX_NOTAG = buildFromValue!ushort(BYTE_ORDER.LITTLE_ENDIAN, cast(ushort) ~0);
+enum STYX_NOTAG = buildFromValue!ushort(BYTE_ORDER.LITTLE_ENDIAN, 0xFFFF);
 // no fid value
-enum STYX_NOFID = buildFromValue!uint(BYTE_ORDER.LITTLE_ENDIAN, ~cast(uint) ~0);
+enum STYX_NOFID = buildFromValue!uint(BYTE_ORDER.LITTLE_ENDIAN, 0xFFFFFFFF);
 
 // suitable amount of buffer to reserve for storing the 9P header
 enum STYX_IOHDRSIZE = 24;
