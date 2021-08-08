@@ -11,4 +11,4 @@ enum STYX_NOTAG = buildFromValue!ushort(BYTE_ORDER.LITTLE_ENDIAN, cast(ushort) ~
 // no fid value
 enum STYX_NOFID = buildFromValue!uint(BYTE_ORDER.LITTLE_ENDIAN, ~cast(uint) ~0);
 // suitable amount of buffer to reserve for storing the 9P header
-enum STYX_IOHDRSIZE = 7;
+enum STYX_IOHDRSIZE = 24;
