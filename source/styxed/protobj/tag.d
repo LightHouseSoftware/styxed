@@ -9,28 +9,28 @@ private {
 class Tag
 {
 	private {
-		uint _tag;
+		ushort _tag;
 		ubyte[] _representation;
 	}
 	
 	// create from value
-	this(uint tag = 0xFFFF)
+	this(ushort tag = 0xFFFF)
 	{
 		_tag = tag;
-		_representation = buildFromValue!uint(BYTE_ORDER.LITTLE_ENDIAN, tag);
+		_representation = buildFromValue!ushort(BYTE_ORDER.LITTLE_ENDIAN, tag);
 	}
 	
 	// getter
-	uint getTag()
+	ushort getTag()
 	{
 		return _tag;
 	}
 	
 	// setter
-	void setTag(uint tag)
+	void setTag(ushort tag)
 	{
 		_tag = tag;
-		_representation = buildFromValue!uint(BYTE_ORDER.LITTLE_ENDIAN, tag);
+		_representation = buildFromValue!ushort(BYTE_ORDER.LITTLE_ENDIAN, tag);
 	}
 	
 	// pack to bytes array
@@ -43,7 +43,7 @@ class Tag
 	void unpack(ubyte[] bytes)
 	{
 		_representation = bytes;
-		_tag = buildFromBytes!uint(BYTE_ORDER.LITTLE_ENDIAN, bytes);
+		_tag = buildFromBytes!ushort(BYTE_ORDER.LITTLE_ENDIAN, bytes);
 	}
 	
 	alias pack this;
