@@ -17,7 +17,7 @@ class Tag
 	this(uint tag = 0xFFFF)
 	{
 		_tag = tag;
-		_representation = STYX_NOTAG;
+		_representation = buildFromValue!uint(BYTE_ORDER.LITTLE_ENDIAN, tag);
 	}
 	
 	// getter
@@ -30,7 +30,7 @@ class Tag
 	void setTag(uint tag)
 	{
 		_tag = tag;
-		_representation = buildFromValue!ushort(BYTE_ORDER.LITTLE_ENDIAN, 0xFFFF);
+		_representation = buildFromValue!ushort(BYTE_ORDER.LITTLE_ENDIAN, tag);
 	}
 	
 	// pack to bytes array

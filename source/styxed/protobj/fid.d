@@ -17,7 +17,7 @@ class Fid
 	this(uint fid = 0xFFFFFFFF)
 	{
 		_fid = fid;
-		_representation = STYX_NOFID;
+		_representation = buildFromValue!uint(BYTE_ORDER.LITTLE_ENDIAN, fid);
 	}
 	
 	// getter
@@ -30,7 +30,7 @@ class Fid
 	void setFid(uint fid)
 	{
 		_fid = fid;
-		_representation = buildFromValue!uint(BYTE_ORDER.LITTLE_ENDIAN, 0xFFFFFFFF);
+		_representation = buildFromValue!uint(BYTE_ORDER.LITTLE_ENDIAN, fid);
 	}
 	
 	// pack to bytes array
