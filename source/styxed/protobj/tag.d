@@ -44,4 +44,6 @@ class Tag
 		_representation = bytes;
 		_tag = buildFromBytes!ushort(BYTE_ORDER.LITTLE_ENDIAN, bytes);
 	}
+	
+	alias pack this;
 }
