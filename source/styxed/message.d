@@ -400,7 +400,7 @@ final class StyxMessage
 	}
 	
 	// set slected field
-	void set(string field, ubyte[] bytes)
+	void set(string field, ref ubyte[] bytes)
 	{
 		_fields[field] = bytes;
 	}
