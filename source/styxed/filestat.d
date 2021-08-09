@@ -45,6 +45,8 @@ enum STYX_FILE_PERMISSION : uint
 	DMEXCL   	= 0x20000000,
 	// authentication file
 	DMAUTH	 	= 0x08000000,
+	// temporary file
+	DMTMP       = 0x04000000,
 	
 	// owner permission
 	OWNER_READ 	= 0x00000400,
