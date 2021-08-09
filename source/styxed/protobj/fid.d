@@ -10,6 +10,7 @@ class Fid
 {
 	private {
 		uint _fid;
+		
 		ubyte[] _representation;
 	}
 	

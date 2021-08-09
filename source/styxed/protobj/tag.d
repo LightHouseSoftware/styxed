@@ -10,6 +10,7 @@ class Tag
 {
 	private {
 		ushort _tag;
+		
 		ubyte[] _representation;
 	}
 	

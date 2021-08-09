@@ -6,13 +6,17 @@ private {
 	import styxed.filestat;
 }
 
-// tag identificator
+// qid identificator (unique number on server)
 class Qid
 {
 	private {
+		// file type
 		STYX_QID_TYPE _type;
+		// version of file
 		uint _vers;
+		// unique path
 		ulong _path;
+		
 		ubyte[] _representation;
 	}
 	
