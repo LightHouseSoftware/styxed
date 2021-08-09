@@ -1,7 +1,7 @@
 module styxed.protobj.tag;
 
 private {
-
+	import styxed.constants;
 }
 
 // tag identificator
