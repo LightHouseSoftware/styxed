@@ -1,36 +1,36 @@
-module styxed.protobj.tag;
+module styxed.protobj.fid;
 
 private {
 	import styxed.bytemanip;
 	import styxed.constants;
 }
 
-// tag identificator
-class Tag
+// file identificator
+class Fid
 {
 	private {
-		uint _tag;
+		uint _fid;
 		ubyte[] _representation;
 	}
 	
 	// create from value
-	this(uint tag = 0xFFFF)
+	this(uint fid = 0xFFFFFFFF)
 	{
-		_tag = tag;
-		_representation = STYX_NOTAG;
+		_fid = fid;
+		_representation = STYX_NOFID;
 	}
 	
 	// getter
-	uint getTag()
+	uint getFid()
 	{
-		return _tag;
+		return _fid;
 	}
 	
 	// setter
-	void setTag(uint tag)
+	void setFid(uint fid)
 	{
-		_tag = tag;
-		_representation = buildFromValue!ushort(BYTE_ORDER.LITTLE_ENDIAN, 0xFFFF);
+		_fid = fid;
+		_representation = buildFromValue!uint(BYTE_ORDER.LITTLE_ENDIAN, 0xFFFFFFFF);
 	}
 	
 	// pack to bytes array
@@ -43,7 +43,7 @@ class Tag
 	void unpack(ubyte[] bytes)
 	{
 		_representation = bytes;
-		_tag = buildFromBytes!ushort(BYTE_ORDER.LITTLE_ENDIAN, bytes);
+		_fid = buildFromBytes!uint(BYTE_ORDER.LITTLE_ENDIAN, bytes);
 	}
 	
 	alias pack this;
