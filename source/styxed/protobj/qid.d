@@ -72,9 +72,9 @@ class Qid
 	void unpack(ubyte[] bytes)
 	{
 		_representation = bytes;
-		_type ~= buildFromBytes!ubyte(BYTE_ORDER.LITTLE_ENDIAN, bytes[0]);
-		_vers ~= buildFromBytes!uint(BYTE_ORDER.LITTLE_ENDIAN, bytes[1..5]);
-		_path ~= buildFromBytes!ulong(BYTE_ORDER.LITTLE_ENDIAN, bytes[5..13]);
+		_type = buildFromBytes!ubyte(BYTE_ORDER.LITTLE_ENDIAN, bytes[0]);
+		_vers = buildFromBytes!uint(BYTE_ORDER.LITTLE_ENDIAN, bytes[1..5]);
+		_path = buildFromBytes!ulong(BYTE_ORDER.LITTLE_ENDIAN, bytes[5..13]);
 	}
 	
 	alias pack this;
