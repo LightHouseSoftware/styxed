@@ -3,8 +3,10 @@ module styxed.protobj.type;
 private {
 	import styxed.bytemanip;
 	import styxed.constants;
+	import styxed.message;
 }
 
+// message type
 class Type
 {
 	private {
