@@ -30,7 +30,7 @@ class Tag
 	void setTag(uint tag)
 	{
 		_tag = tag;
-		_representation = buildFromValue!ushort(BYTE_ORDER.LITTLE_ENDIAN, tag);
+		_representation = buildFromValue!uint(BYTE_ORDER.LITTLE_ENDIAN, tag);
 	}
 	
 	// pack to bytes array
@@ -43,7 +43,7 @@ class Tag
 	void unpack(ubyte[] bytes)
 	{
 		_representation = bytes;
-		_tag = buildFromBytes!ushort(BYTE_ORDER.LITTLE_ENDIAN, bytes);
+		_tag = buildFromBytes!uint(BYTE_ORDER.LITTLE_ENDIAN, bytes);
 	}
 	
 	alias pack this;
