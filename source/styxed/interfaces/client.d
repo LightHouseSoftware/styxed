@@ -1,4 +1,4 @@
-module styxed.client;
+module styxed.interfaces.client;
 
 private {
 	import styxed.message;
